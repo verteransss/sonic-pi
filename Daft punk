@@ -1,0 +1,49 @@
+use_bpm 123
+macquillage = "/Users/giorgiaverterano/Desktop/il-macquillage-lady.wav"
+load_sample macquillage
+
+define :sample_chunk do |what, beat, dur, delay|
+  beat = beat / 16.0
+  dur = dur / 16.0
+  sample what, beat_stretch: 16, start: beat, finish: beat + dur
+  sleep delay
+end
+
+define :giro do
+  
+  sample_chunk(macquillage, 0.0, 0.5, 0.5)
+  sample_chunk(macquillage, 2.5, 1.0, 0.25)
+  sample_chunk(macquillage, 3.5, 0.5, 0.75)
+  sample_chunk(macquillage, 0.0, 0.5, 0.5)
+  sample_chunk(macquillage, 8.5, 0.5, 0.5)
+  sample_chunk(macquillage, 2.5, 1.0, 1.0)
+  sample_chunk(macquillage, 7.5, 0.5, 0.5)
+  
+  sample_chunk(macquillage, 3.5, 0.5, 0.5)
+  sample_chunk(macquillage, 2.5, 1.0, 1.0)
+  sample_chunk(macquillage, 7.5, 0.5, 0.5)
+  sample_chunk(macquillage, 8.5, 0.5, 0.5)
+  sample_chunk(macquillage, 2.5, 1.0, 1.0)
+  sample_chunk(macquillage, 7.5, 0.5, 0.5)
+  
+  sample_chunk(macquillage, 0.0, 0.5, 0.5)
+  sample_chunk(macquillage, 2.5, 1.0, 0.25)
+  sample_chunk(macquillage, 3.5, 0.5, 0.75)
+  sample_chunk(macquillage, 0.0, 0.5, 0.5)
+  sample_chunk(macquillage, 8.5, 0.5, 0.5)
+  sample_chunk(macquillage, 2.5, 1.0, 1.0)
+  sample_chunk(macquillage, 7.5, 0.5, 0.5)
+  
+  sample_chunk(macquillage, 3.5, 0.5, 0.5)
+  sample_chunk(macquillage, 8.5, 0.25, 0.0)
+  sample_chunk(macquillage, 2.5, 1.0, 0.25)
+  sample_chunk(macquillage, 3.5, 0.5, 0.5)
+  sample_chunk(macquillage, 8.5, 0.25, 0.25)
+  sample_chunk(macquillage, 3.5, 0.5, 0.5)
+  sample_chunk(macquillage, 8.5, 0.5, 0.5)
+  sample_chunk(macquillage, 2.5, 1.0, 1.0)
+  sample_chunk(macquillage, 7.5, 0.5, 0.5)
+end
+
+
+giro
